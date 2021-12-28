@@ -150,7 +150,8 @@ def setup_tshock(world_path: Path, cwd: OptionalPath=None):
             
     json_config_path = Path(path_mapping['config'], "config.json")
     config = json.loads(json_config_path.read_text())
-    assert "RestApiEnabled" in config
+    print(config)
+    # assert "RestApiEnabled" in config
     config["RestApiEnabled"] = True
     config['RestApiPort'] = 7878
     config["EnableTokenEndpointAuthentication"] = True
